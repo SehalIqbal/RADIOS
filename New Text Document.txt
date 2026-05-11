@@ -1,3 +1,0 @@
-authtoken: 3DSjZIHEHsnEGzteKbGD3ZzUWyC_6Qqw9z8f3AX4TYd9ZP6Qa
-
-domain: headband-cheese-frosting.ngrok-free.dev
