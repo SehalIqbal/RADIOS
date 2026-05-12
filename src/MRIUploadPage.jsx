@@ -73,7 +73,7 @@ function MRIUploadPage({ onBack }) {
       formData.append('t2',    files.t2);
 
       setStatus('analyzing');
-      setStatusMsg('Running nnU-Net segmentation...');
+      setStatusMsg('Running segmentation...');
 
       const response = await fetch(`${BACKEND_URL}/analyze-mri`, {
         method: 'POST',
@@ -123,7 +123,7 @@ function MRIUploadPage({ onBack }) {
         </button>
         <div className="upload-title-section">
           <h2 className="upload-title">MRI Brain Tumor Analysis</h2>
-          <p className="upload-subtitle">Upload all 4 MRI modalities for nnU-Net segmentation + AI report</p>
+          <p className="upload-subtitle">Upload all 4 MRI modalities for segmentation + report</p>
         </div>
       </div>
 
@@ -185,7 +185,7 @@ function MRIUploadPage({ onBack }) {
             </div>
           </div>
 
-          <div className="stats-strip">
+          {/* <div className="stats-strip">
             <div className="stat-chip">
               <span className="stat-label">Total Volume</span>
               <span className="stat-value">{result.tumor_volume_cm3} cm³</span>
@@ -210,16 +210,16 @@ function MRIUploadPage({ onBack }) {
                 </div>
               </>
             )}
-          </div>
+          </div> */}
 
           {result.overlay_image && (
             <div className="overlay-section">
               <h4 className="section-subheading">Segmentation Overlay</h4>
-              <div className="overlay-legend">
+              {/* <div className="overlay-legend">
                 <span><span className="legend-dot" style={{ background: '#facc15' }}></span>Enhancing Tumor</span>
                 <span><span className="legend-dot" style={{ background: '#f87171' }}></span>Necrotic Core</span>
                 <span><span className="legend-dot" style={{ background: '#4ade80' }}></span>Edema</span>
-              </div>
+              </div> */}
               <img
                 src={`data:image/png;base64,${result.overlay_image}`}
                 alt="MRI segmentation overlay"
