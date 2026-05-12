@@ -20,7 +20,7 @@ function XrayUploadPage({ onBack }) {
     }
   };
 
-  const BACKEND_URL = "https://strong-protected-subscribe-rotary.trycloudflare.com"; // paste from Colab output
+const BACKEND_URL = "https://headband-cheese-frosting.ngrok-free.dev";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -78,14 +78,14 @@ function XrayUploadPage({ onBack }) {
         </button>
         <div className="upload-title-section">
           <h2 className="upload-title">X-ray Analysis</h2>
-          <p className="upload-subtitle">Upload your X-ray image for AI-powered diagnostic analysis</p>
+          <p className="upload-subtitle">Upload your X-ray image for diagnostic analysis</p>
         </div>
       </div>
 
       <form onSubmit={handleSubmit} className="upload-form">
         <div className="upload-section">
           <label className="upload-label">
-            X-ray Image <span className="required-badge">Required</span>
+            X-ray Image
           </label>
           <div className={`upload-dropzone ${scanFile ? 'has-file' : ''}`}>
             {scanFile ? (
@@ -125,45 +125,7 @@ function XrayUploadPage({ onBack }) {
           </div>
         </div>
 
-        <div className="upload-section">
-          <label className="upload-label">
-            Previous Report <span className="optional-badge">Optional</span>
-          </label>
-          <div className={`upload-dropzone secondary ${reportFile ? 'has-file' : ''}`}>
-            {reportFile ? (
-              <div className="file-preview">
-                <div className="file-icon secondary-icon">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path d="M20 4H8C6.93913 4 5.92172 4.42143 5.17157 5.17157C4.42143 5.92172 4 6.93913 4 8V24C4 25.0609 4.42143 26.0783 5.17157 26.8284C5.92172 27.5786 6.93913 28 8 28H24C25.0609 28 26.0783 27.5786 26.8284 26.8284C27.5786 26.0783 28 25.0609 28 24V12L20 4Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M20 4V12H28M12 16H20M12 20H20M12 24H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <div className="file-info">
-                  <p className="file-name">{reportFile.name}</p>
-                  <p className="file-size">{(reportFile.size / 1024).toFixed(2)} KB</p>
-                </div>
-                <button type="button" onClick={() => setReportFile(null)} className="file-remove">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                </button>
-              </div>
-            ) : (
-              <>
-                <div className="upload-icon secondary-icon">
-                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                    <path d="M25 5H10C8.67392 5 7.40215 5.52678 6.46447 6.46447C5.52678 7.40215 5 8.67392 5 10V30C5 31.3261 5.52678 32.5979 6.46447 33.5355C7.40215 34.4732 8.67392 35 10 35H30C31.3261 35 32.5979 34.4732 33.5355 33.5355C34.4732 32.5979 35 31.3261 35 30V15L25 5Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M25 5V15H35" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <label className="upload-button-secondary">
-                  Upload Previous Report
-                  <input type="file" onChange={handleReportChange} accept=".pdf,.txt,.doc,.docx" style={{ display: 'none' }} />
-                </label>
-              </>
-            )}
-          </div>
-        </div>
+        
 
         <button type="submit" className="btn-primary submit-btn" disabled={isSubmitting || !scanFile}>
           {isSubmitting ? (
