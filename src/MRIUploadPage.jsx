@@ -73,7 +73,7 @@ function MRIUploadPage({ onBack }) {
       formData.append('t2',    files.t2);
 
       setStatus('analyzing');
-      setStatusMsg('Running nnU-Net segmentation... (~40 seconds)');
+      setStatusMsg('Running nnU-Net segmentation...');
 
       const response = await fetch(`${BACKEND_URL}/analyze-mri`, {
         method: 'POST',
